@@ -1,11 +1,11 @@
-import { ImageGAlleryItem } from 'components/ImageGalleryItem/ImageGalleryItem';
+import { ImageGalleryItem } from 'components/ImageGalleryItem/ImageGalleryItem';
 import { Gallery } from './ImageGallery.styled';
 import PropTypes from 'prop-types';
 
 export const ImageGallery = ({ photos, onClickImageItem }) => (
   <Gallery>
     {photos.map(({ id, webformatURL, tags }) => (
-      <ImageGAlleryItem
+      <ImageGalleryItem
         id={id}
         tags={tags}
         smallUrl={webformatURL}

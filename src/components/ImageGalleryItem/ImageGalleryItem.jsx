@@ -4,13 +4,13 @@ import {
 } from './ImageGalleryItem.styled';
 import PropTypes from 'prop-types';
 
-export const ImageGAlleryItem = ({ id, smallUrl, tags, onClickImageItem }) => (
+export const ImageGalleryItem = ({ id, smallUrl, tags, onClickImageItem }) => (
   <ImageGalleryItemStyled key={id} data-id={id} onClick={onClickImageItem}>
     <ImageGalleryImg src={smallUrl} alt={tags} data-id={id} />
   </ImageGalleryItemStyled>
 );
 
-ImageGAlleryItem.propTypes = {
+ImageGalleryItem.propTypes = {
   id: PropTypes.number.isRequired,
   smallUrl: PropTypes.string.isRequired,
   tags: PropTypes.string.isRequired,
