@@ -1,5 +1,5 @@
 import { RotatingLines } from 'react-loader-spinner';
-import { WrapperLoader } from 'loader.styled';
+import { WrapperLoader } from './Loader.styled';
 
 export const Loader = () => (
   <WrapperLoader>

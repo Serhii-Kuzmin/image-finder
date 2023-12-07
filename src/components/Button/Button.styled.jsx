@@ -6,29 +6,19 @@ export const WrapperButton = styled.div`
 `;
 
 export const ButtonStyle = styled.button`
-  padding: 8px 16px;
-  margin-left: auto;
-  border-radius: 2px;
-  background-color: #3f51b5;
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  text-align: center;
   display: inline-block;
-  color: #fff;
-  border: 0;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
   text-decoration: none;
+  background-color: #4caf50;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  font-family: inherit;
-  font-size: 18px;
-  line-height: 24px;
-  font-style: normal;
-  font-weight: 500;
-  min-width: 180px;
-  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
-    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  transition: background-color 0.3s, box-shadow 0.3s;
   &:hover {
-    background-color: #303f9f;
-  }
-  &:focus {
-    background-color: #303f9f;
+    background-color: #45a049;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 `;
