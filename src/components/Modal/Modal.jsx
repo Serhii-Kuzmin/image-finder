@@ -10,7 +10,7 @@ export class Modal extends Component {
     onClose: PropTypes.func.isRequired,
     selectedPhoto: PropTypes.shape({
       id: PropTypes.number.isRequired,
-      largeImageURl: PropTypes.string.isRequired,
+      largeImageURL: PropTypes.string.isRequired,
       webformatURL: PropTypes.string.isRequired,
       tags: PropTypes.string.isRequired,
     }).isRequired,
@@ -38,13 +38,13 @@ export class Modal extends Component {
 
   render() {
     const {
-      selectedPhoto: { largeImageURl, tags },
+      selectedPhoto: { largeImageURL, tags },
     } = this.props;
 
     return createPortal(
       <Overlay onClick={this.onClickOverlay}>
         <ModalStyle>
-          <img src={largeImageURl} alt={tags} />
+          <img src={largeImageURL} alt={tags} />
         </ModalStyle>
       </Overlay>,
       modalRoot

@@ -96,7 +96,7 @@ export class App extends Component {
     const selectedPhoto = photos.find(photo => photo.id === Number(imageId));
     this.setState({ selectedPhoto });
 
-    this.toogleModal();
+    this.toggleModal();
   };
 
   onSubmitSearchBar = event => {
@@ -144,7 +144,7 @@ export class App extends Component {
           <Button onClickRender={this.onClickRender} />
         )}
         {showModal && (
-          <Modal selectedPhoto={selectedPhoto} onClose={this.toogleModal} />
+          <Modal selectedPhoto={selectedPhoto} onClose={this.toggleModal} />
         )}
       </div>
     );

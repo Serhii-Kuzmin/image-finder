@@ -6,6 +6,7 @@ export const ImageGallery = ({ photos, onClickImageItem }) => (
   <Gallery>
     {photos.map(({ id, webformatURL, tags }) => (
       <ImageGalleryItem
+        key={`${id}-${webformatURL}`}
         id={id}
         tags={tags}
         smallUrl={webformatURL}
@@ -17,7 +18,7 @@ export const ImageGallery = ({ photos, onClickImageItem }) => (
 
 ImageGallery.propTypes = {
   photos: PropTypes.arrayOf(
-    PropTypes.objectOf({
+    PropTypes.shape({
       id: PropTypes.number.isRequired,
       largeImageURL: PropTypes.string.isRequired,
       webformatURL: PropTypes.string.isRequired,
