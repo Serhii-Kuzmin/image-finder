@@ -8,12 +8,7 @@ const modalRoot = document.querySelector('#modal-root');
 export class Modal extends Component {
   static propTypes = {
     onClose: PropTypes.func.isRequired,
-    selectedPhoto: PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      largeImageURL: PropTypes.string.isRequired,
-      webformatURL: PropTypes.string.isRequired,
-      tags: PropTypes.string.isRequired,
-    }).isRequired,
+    selectedPhoto: PropTypes.string,
   };
 
   componentDidMount = () => {
@@ -37,14 +32,12 @@ export class Modal extends Component {
   };
 
   render() {
-    const {
-      selectedPhoto: { largeImageURL, tags },
-    } = this.props;
+    const { selectedPhoto } = this.props;
 
     return createPortal(
       <Overlay onClick={this.onClickOverlay}>
         <ModalStyle>
-          <img src={largeImageURL} alt={tags} />
+          <img src={selectedPhoto} alt="preview img" />
         </ModalStyle>
       </Overlay>,
       modalRoot

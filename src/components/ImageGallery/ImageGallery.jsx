@@ -4,11 +4,12 @@ import PropTypes from 'prop-types';
 
 export const ImageGallery = ({ photos, onClickImageItem }) => (
   <Gallery>
-    {photos.map(({ id, webformatURL, tags }) => (
+    {photos.map(({ id, webformatURL, tags, largeImageURL }) => (
       <ImageGalleryItem
         key={`${id}-${webformatURL}`}
         id={id}
         tags={tags}
+        largeImageURL={largeImageURL}
         smallUrl={webformatURL}
         onClickImageItem={onClickImageItem}
       />

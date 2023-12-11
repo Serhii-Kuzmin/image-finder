@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import { fetchPhoto, onFetchError } from './service/api';
+import { fetchPhoto, onFetchError } from '../service/api';
 import { SearchBar } from './SearchBar/SearchBar';
 import { AppStyle } from './App.styled';
 import { ImageGallery } from './ImageGallery/ImageGallery';
@@ -90,12 +90,16 @@ export class App extends Component {
     }));
   };
 
-  onClickOpenModal = event => {
-    const { photos } = this.state;
-    const imageId = event.target.getAttribute('data-id');
-    const selectedPhoto = photos.find(photo => photo.id === Number(imageId));
-    this.setState({ selectedPhoto });
+  // onClickOpenModal = event => {
+  //   const { photos } = this.state;
+  //   const imageId = event.target.getAttribute('data-id');
+  //   const selectedPhoto = photos.find(photo => photo.id === Number(imageId));
+  //   this.setState({ selectedPhoto });
 
+  //   this.toggleModal();
+  // };
+  onClickOpenModal = largeImageURL => {
+    this.setState({ selectedPhoto: largeImageURL });
     this.toggleModal();
   };
 
